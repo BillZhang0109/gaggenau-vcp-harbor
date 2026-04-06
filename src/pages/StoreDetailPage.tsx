@@ -21,7 +21,7 @@ export default function StoreDetailPage({ store, milestones }: StoreDetailPagePr
   return (
     <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
       {/* Header */}
-      <div className="bg-card backdrop-blur-xl border border-card-border rounded-lg px-6 py-5 lg:px-8 lg:py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="bg-card backdrop-blur-xl border border-card-border rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ padding: '20px 32px' }}>
         <div className="min-w-0">
           <div className="flex items-center gap-3">
             <h2 className="font-display text-gold text-xl lg:text-2xl font-bold truncate">
@@ -53,7 +53,7 @@ export default function StoreDetailPage({ store, milestones }: StoreDetailPagePr
 
       {/* Timeline + Budget */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        <div className="lg:col-span-2 bg-card backdrop-blur-xl border border-card-border rounded-lg px-6 py-5 lg:px-8 lg:py-6">
+        <div className="lg:col-span-2 bg-card backdrop-blur-xl border border-card-border rounded-lg" style={{ padding: '20px 32px' }}>
           <h3 className="font-display text-gold text-base font-semibold mb-5">
             {t('detail.timeline')}
           </h3>
@@ -64,7 +64,7 @@ export default function StoreDetailPage({ store, milestones }: StoreDetailPagePr
           />
         </div>
 
-        <div className="lg:col-span-3 bg-card backdrop-blur-xl border border-card-border rounded-lg px-6 py-5 lg:px-8 lg:py-6">
+        <div className="lg:col-span-3 bg-card backdrop-blur-xl border border-card-border rounded-lg" style={{ padding: '20px 32px' }}>
           <h3 className="font-display text-gold text-base font-semibold mb-5">
             {t('detail.budgetDashboard')}
           </h3>
@@ -74,14 +74,14 @@ export default function StoreDetailPage({ store, milestones }: StoreDetailPagePr
 
       {/* Risks + Actions */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-card backdrop-blur-xl border border-card-border rounded-lg px-6 py-5 lg:px-8 lg:py-6">
+        <div className="bg-card backdrop-blur-xl border border-card-border rounded-lg" style={{ padding: '20px 32px' }}>
           <h3 className="font-display text-gold text-base font-semibold mb-4">
             {t('detail.risks')}
           </h3>
           <RiskPanel risks={store.risks} />
         </div>
 
-        <div className="bg-card backdrop-blur-xl border border-card-border rounded-lg px-6 py-5 lg:px-8 lg:py-6">
+        <div className="bg-card backdrop-blur-xl border border-card-border rounded-lg" style={{ padding: '20px 32px' }}>
           <h3 className="font-display text-gold text-base font-semibold mb-4">
             {t('detail.actions')}
           </h3>

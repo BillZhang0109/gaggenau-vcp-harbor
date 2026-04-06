@@ -11,7 +11,7 @@ export default function TimelineVertical({ milestones, completed, current }: Tim
   const { t } = useTranslation();
 
   return (
-    <div className="space-y-0">
+    <div className="space-y-0" style={{ paddingLeft: '8px' }}>
       {milestones.map((m, i) => {
         const isCompleted = completed.includes(m);
         const isCurrent = m === current && !isCompleted;

@@ -69,7 +69,8 @@
       "nextStep": { "en": "Start site search", "zh": "启动选址" },
       "estimatedCompletion": "2027-07-30",
       "risks": [
-        { "en": "Existing store closes March 2027, temporary sales gap accepted", "zh": "现有门店2027年3月关闭，已接受短暂销售停滞", "severity": "warning" }
+        { "en": "Existing store closes March 2027, temporary sales gap accepted", "zh": "现有门店2027年3月关闭，已接受短暂销售停滞", "severity": "warning" },
+        { "en": "New store opening cannot seamlessly connect with existing store closure — city will temporarily have no official Gaggenau retail presence", "zh": "新店开业时间与现有门店闭店时间无法无缝衔接，届时该城市将短暂没有嘉格纳官方销售门店", "severity": "warning" }
       ],
       "budgetUsed": 0,
       "budgetTotal": null,
@@ -117,7 +118,8 @@
       "nextStep": { "en": "Start site search", "zh": "启动选址" },
       "estimatedCompletion": null,
       "risks": [
-        { "en": "Existing store (Taikoo Li) closes March 2027, temporary sales gap accepted", "zh": "现有门店（太古里）2027年3月关闭，已接受短暂销售停滞", "severity": "warning" }
+        { "en": "Existing store (Taikoo Li) closes March 2027, temporary sales gap accepted", "zh": "现有门店（太古里）2027年3月关闭，已接受短暂销售停滞", "severity": "warning" },
+        { "en": "New store opening cannot seamlessly connect with existing store closure — city will temporarily have no official Gaggenau retail presence", "zh": "新店开业时间与现有门店闭店时间无法无缝衔接，届时该城市将短暂没有嘉格纳官方销售门店", "severity": "warning" }
       ],
       "budgetUsed": 0,
       "budgetTotal": null,
