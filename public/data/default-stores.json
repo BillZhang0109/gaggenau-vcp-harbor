@@ -25,6 +25,12 @@
       "nextStep": { "en": "Site scouting in progress, target completion Sep 2026", "zh": "选址进行中，目标2026年9月完成" },
       "estimatedCompletion": "2027-07-30",
       "risks": [],
+      "phaseDetails": {
+        "site_scouting": {
+          "description": { "en": "Internal discussion on target district; shortlisting prime commercial zones for evaluation", "zh": "内部讨论店址区域，提出大致商业区位置供选择" },
+          "updatedAt": "2026-04-06"
+        }
+      },
       "budgetUsed": 0,
       "budgetTotal": null,
       "lastUpdated": "2026-04-06"
@@ -47,6 +53,12 @@
       "nextStep": { "en": "Site search coordination", "zh": "协调选址" },
       "estimatedCompletion": "2027-07-30",
       "risks": [],
+      "phaseDetails": {
+        "site_scouting": {
+          "description": { "en": "Coordinating with local retail partners on potential locations", "zh": "与本地零售合作伙伴协调潜在选址" },
+          "updatedAt": "2026-04-06"
+        }
+      },
       "budgetUsed": 0,
       "budgetTotal": null,
       "lastUpdated": "2026-04-06"
@@ -72,6 +84,12 @@
         { "en": "Existing store closes March 2027, temporary sales gap accepted", "zh": "现有门店2027年3月关闭，已接受短暂销售停滞", "severity": "warning" },
         { "en": "New store opening cannot seamlessly connect with existing store closure — city will temporarily have no official Gaggenau retail presence", "zh": "新店开业时间与现有门店闭店时间无法无缝衔接，届时该城市将短暂没有嘉格纳官方销售门店", "severity": "warning" }
       ],
+      "phaseDetails": {
+        "site_scouting": {
+          "description": { "en": "Pending initiation; awaiting internal alignment on target area", "zh": "待启动，等待内部确认目标商圈" },
+          "updatedAt": "2026-04-06"
+        }
+      },
       "budgetUsed": 0,
       "budgetTotal": null,
       "lastUpdated": "2026-04-06"
@@ -96,6 +114,16 @@
       "risks": [
         { "en": "Building construction timeline may delay site access", "zh": "大楼施工进度可能影响进场时间", "severity": "warning" }
       ],
+      "phaseDetails": {
+        "site_scouting": {
+          "description": { "en": "Completed — site confirmed at 230 sqm", "zh": "已完成 — 确认230平米店址" },
+          "updatedAt": "2025-10-01"
+        },
+        "concept": {
+          "description": { "en": "Langton developing initial concept; building under construction, site access est. Sep 2026", "zh": "Langton推进概念方案中；大楼施工中，预计2026年9月可进场" },
+          "updatedAt": "2026-04-06"
+        }
+      },
       "budgetUsed": 0,
       "budgetTotal": 2990000,
       "lastUpdated": "2026-04-06"
@@ -121,6 +149,12 @@
         { "en": "Existing store (Taikoo Li) closes March 2027, temporary sales gap accepted", "zh": "现有门店（太古里）2027年3月关闭，已接受短暂销售停滞", "severity": "warning" },
         { "en": "New store opening cannot seamlessly connect with existing store closure — city will temporarily have no official Gaggenau retail presence", "zh": "新店开业时间与现有门店闭店时间无法无缝衔接，届时该城市将短暂没有嘉格纳官方销售门店", "severity": "warning" }
       ],
+      "phaseDetails": {
+        "site_scouting": {
+          "description": { "en": "Pending initiation; existing Taikoo Li store closes Mar 2027", "zh": "待启动，现有太古里门店2027年3月关闭" },
+          "updatedAt": "2026-04-06"
+        }
+      },
       "budgetUsed": 0,
       "budgetTotal": null,
       "lastUpdated": "2026-04-06"
@@ -142,6 +176,12 @@
       "currentMilestone": "site_scouting",
       "nextStep": { "en": "Site search coordination", "zh": "协调选址" },
       "estimatedCompletion": null,
+      "phaseDetails": {
+        "site_scouting": {
+          "description": { "en": "Coordinating with local retail channels on site options", "zh": "与本地零售渠道协调选址方案" },
+          "updatedAt": "2026-04-06"
+        }
+      },
       "risks": [],
       "budgetUsed": 0,
       "budgetTotal": null,
@@ -164,6 +204,12 @@
       "currentMilestone": "site_scouting",
       "nextStep": { "en": "Site search coordination", "zh": "协调选址" },
       "estimatedCompletion": null,
+      "phaseDetails": {
+        "site_scouting": {
+          "description": { "en": "Coordinating with local retail channels on site options", "zh": "与本地零售渠道协调选址方案" },
+          "updatedAt": "2026-04-06"
+        }
+      },
       "risks": [],
       "budgetUsed": 0,
       "budgetTotal": null,

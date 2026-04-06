@@ -61,6 +61,7 @@ export default function StoreDetailPage({ store, milestones }: StoreDetailPagePr
             milestones={milestones}
             completed={store.completedMilestones}
             current={store.currentMilestone}
+            phaseDetails={store.phaseDetails}
           />
         </div>
 

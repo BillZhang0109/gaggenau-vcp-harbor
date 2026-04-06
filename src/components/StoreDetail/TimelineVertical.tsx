@@ -1,14 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import type { MilestoneKey } from '../../types/store';
+import type { MilestoneKey, PhaseDetail } from '../../types/store';
 
 interface TimelineVerticalProps {
   milestones: MilestoneKey[];
   completed: MilestoneKey[];
   current: MilestoneKey;
+  phaseDetails?: Partial<Record<MilestoneKey, PhaseDetail>>;
 }
 
-export default function TimelineVertical({ milestones, completed, current }: TimelineVerticalProps) {
-  const { t } = useTranslation();
+export default function TimelineVertical({ milestones, completed, current, phaseDetails }: TimelineVerticalProps) {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language as 'en' | 'zh';
 
   return (
     <div className="space-y-0" style={{ paddingLeft: '8px' }}>
@@ -16,6 +18,7 @@ export default function TimelineVertical({ milestones, completed, current }: Tim
         const isCompleted = completed.includes(m);
         const isCurrent = m === current && !isCompleted;
         const isLast = i === milestones.length - 1;
+        const detail = phaseDetails?.[m];
 
         return (
           <div
@@ -41,16 +44,29 @@ export default function TimelineVertical({ milestones, completed, current }: Tim
                 {isCurrent && <div className="w-1.5 h-1.5 bg-gold rounded-full" />}
               </div>
               {!isLast && (
-                <div className={`w-0.5 h-10 ${isCompleted ? 'bg-gold/40' : 'bg-text-secondary/15'}`} />
+                <div className={`w-0.5 ${detail ? 'h-14' : 'h-10'} ${isCompleted ? 'bg-gold/40' : 'bg-text-secondary/15'}`} />
               )}
             </div>
-            <div className="pb-6 -mt-0.5">
-              <p className={`text-sm font-medium ${isCompleted ? 'text-gold' : isCurrent ? 'text-gold/90' : 'text-text-secondary/50'}`}>
-                {t(`milestone.${m}`)}
-              </p>
-              <p className="text-xs text-text-secondary mt-0.5">
-                {isCompleted ? t('detail.completed') : isCurrent ? t('detail.inProgress') : t('detail.upcoming')}
-              </p>
+            <div className="pb-6 -mt-0.5 flex-1 min-w-0">
+              <div className="flex items-baseline justify-between gap-3">
+                <p className={`text-sm font-medium flex-shrink-0 ${isCompleted ? 'text-gold' : isCurrent ? 'text-gold/90' : 'text-text-secondary/50'}`}>
+                  {t(`milestone.${m}`)}
+                </p>
+                {detail?.updatedAt && (
+                  <span className="text-[10px] text-text-secondary/40 tabular-nums flex-shrink-0">
+                    {detail.updatedAt}
+                  </span>
+                )}
+              </div>
+              {detail ? (
+                <p className={`text-xs mt-1 leading-relaxed ${isCompleted ? 'text-text-secondary' : isCurrent ? 'text-text-primary/70' : 'text-text-secondary/40'}`}>
+                  {detail.description[lang]}
+                </p>
+              ) : (
+                <p className="text-xs text-text-secondary/40 mt-0.5">
+                  {isCompleted ? t('detail.completed') : isCurrent ? t('detail.inProgress') : t('detail.upcoming')}
+                </p>
+              )}
             </div>
           </div>
         );

@@ -21,6 +21,11 @@ export interface Risk {
   severity?: 'critical' | 'warning' | 'info';
 }
 
+export interface PhaseDetail {
+  description: LocalizedText;
+  updatedAt?: string;
+}
+
 export interface Store {
   id: string;
   name: LocalizedText;
@@ -41,6 +46,7 @@ export interface Store {
   risks: Risk[];
   budgetUsed: number;
   budgetTotal: number | null;
+  phaseDetails?: Partial<Record<MilestoneKey, PhaseDetail>>;
   lastUpdated?: string;
 }
 
