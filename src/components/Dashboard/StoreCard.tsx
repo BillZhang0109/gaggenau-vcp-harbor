@@ -10,9 +10,10 @@ interface StoreCardProps {
   store: Store;
   milestones: MilestoneKey[];
   index: number;
+  onClick?: () => void;
 }
 
-export default function StoreCard({ store, milestones, index }: StoreCardProps) {
+export default function StoreCard({ store, milestones, index, onClick }: StoreCardProps) {
   const { t, i18n } = useTranslation();
   const lang = i18n.language as 'en' | 'zh';
   const progress = calculateProgress(store, milestones);
@@ -38,7 +39,9 @@ export default function StoreCard({ store, milestones, index }: StoreCardProps) 
 
   return (
     <div
-      className="group bg-card backdrop-blur-xl border border-card-border rounded-lg hover:border-card-hover hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,169,110,0.08)] transition-all duration-300 flex flex-col"
+      onClick={onClick}
+      role={onClick ? 'button' : undefined}
+      className="group bg-card backdrop-blur-xl border border-card-border rounded-lg hover:border-card-hover hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,169,110,0.08)] transition-all duration-300 flex flex-col cursor-pointer"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(16px)',

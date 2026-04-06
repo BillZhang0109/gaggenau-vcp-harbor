@@ -49,7 +49,7 @@ export default function App() {
       {/* Main content */}
       <main className="max-w-[1400px] mx-auto" style={{ padding: '100px 32px 32px' }}>
         {activeTab === 'overview' ? (
-          <PortfolioOverview key="overview" data={data} />
+          <PortfolioOverview key="overview" data={data} onStoreClick={setActiveTab} />
         ) : activeStore ? (
           <StoreDetailPage
             key={activeStore.id}
