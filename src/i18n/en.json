@@ -1,0 +1,71 @@
+{
+  "brand": "GAGGENAU VCP — HARBOR",
+  "nav": {
+    "overview": "Overview",
+    "detail": "Detail",
+    "uploadData": "Upload",
+    "resetData": "Reset"
+  },
+  "overview": {
+    "title": "Portfolio Overview",
+    "stores": "Stores",
+    "totalBudget": "Total Budget"
+  },
+  "store": {
+    "area": "Area",
+    "budget": "Budget",
+    "designer": "Designer",
+    "currentPhase": "Current Phase",
+    "nextStep": "Next Step",
+    "estCompletion": "Est. Completion",
+    "progress": "Progress",
+    "overallProgress": "Overall Progress",
+    "budgetUsed": "Used",
+    "budgetRemaining": "Remaining",
+    "budgetTotal": "Total",
+    "consumptionRate": "Consumption",
+    "budgetHealth": "Health",
+    "healthy": "Healthy",
+    "overBudget": "Over Budget",
+    "tbd": "TBD",
+    "na": "N/A"
+  },
+  "status": {
+    "on_track": "On Track",
+    "at_risk": "At Risk",
+    "critical": "Critical",
+    "not_started": "Not Started"
+  },
+  "milestone": {
+    "site_scouting": "Scouting",
+    "concept": "Concept",
+    "schematic_design": "Schematic",
+    "detailed_design": "Detailed",
+    "design_development": "Develop",
+    "tender": "Tender",
+    "construction": "Construct",
+    "pre_handover": "Handover"
+  },
+  "detail": {
+    "timeline": "Timeline",
+    "budgetDashboard": "Budget Dashboard",
+    "risks": "Risks & Blockers",
+    "actions": "Next Actions",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "upcoming": "Upcoming",
+    "noRisks": "No risks identified",
+    "severity": {
+      "critical": "Critical",
+      "warning": "Warning",
+      "info": "Info"
+    }
+  },
+  "upload": {
+    "title": "Upload Store Data",
+    "dragDrop": "Drag & drop JSON file here, or click to select",
+    "success": "Data updated successfully",
+    "error": "Invalid JSON format",
+    "schemaError": "JSON must contain a 'stores' array with 'id' fields"
+  }
+}

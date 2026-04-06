@@ -1,0 +1,60 @@
+import { useTranslation } from 'react-i18next';
+import type { MilestoneKey } from '../../types/store';
+
+interface TimelineVerticalProps {
+  milestones: MilestoneKey[];
+  completed: MilestoneKey[];
+  current: MilestoneKey;
+}
+
+export default function TimelineVertical({ milestones, completed, current }: TimelineVerticalProps) {
+  const { t } = useTranslation();
+
+  return (
+    <div className="space-y-0">
+      {milestones.map((m, i) => {
+        const isCompleted = completed.includes(m);
+        const isCurrent = m === current && !isCompleted;
+        const isLast = i === milestones.length - 1;
+
+        return (
+          <div
+            key={m}
+            className="flex items-start gap-4 animate-[fadeIn_0.3s_ease-out_both]"
+            style={{ animationDelay: `${i * 60}ms` }}
+          >
+            <div className="flex flex-col items-center flex-shrink-0">
+              <div
+                className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                  isCompleted
+                    ? 'bg-gold border-gold'
+                    : isCurrent
+                    ? 'bg-gold/20 border-gold animate-blink'
+                    : 'bg-transparent border-text-secondary/30'
+                }`}
+              >
+                {isCompleted && (
+                  <svg className="w-2.5 h-2.5 text-bg" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                )}
+                {isCurrent && <div className="w-1.5 h-1.5 bg-gold rounded-full" />}
+              </div>
+              {!isLast && (
+                <div className={`w-0.5 h-10 ${isCompleted ? 'bg-gold/40' : 'bg-text-secondary/15'}`} />
+              )}
+            </div>
+            <div className="pb-6 -mt-0.5">
+              <p className={`text-sm font-medium ${isCompleted ? 'text-gold' : isCurrent ? 'text-gold/90' : 'text-text-secondary/50'}`}>
+                {t(`milestone.${m}`)}
+              </p>
+              <p className="text-xs text-text-secondary mt-0.5">
+                {isCompleted ? t('detail.completed') : isCurrent ? t('detail.inProgress') : t('detail.upcoming')}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

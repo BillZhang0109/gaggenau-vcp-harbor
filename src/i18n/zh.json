@@ -1,0 +1,71 @@
+{
+  "brand": "GAGGENAU VCP — HARBOR",
+  "nav": {
+    "overview": "总览",
+    "detail": "详情",
+    "uploadData": "上传",
+    "resetData": "重置"
+  },
+  "overview": {
+    "title": "项目组合总览",
+    "stores": "门店",
+    "totalBudget": "总预算"
+  },
+  "store": {
+    "area": "面积",
+    "budget": "预算",
+    "designer": "设计方",
+    "currentPhase": "当前阶段",
+    "nextStep": "下一步",
+    "estCompletion": "预计完成",
+    "progress": "进度",
+    "overallProgress": "综合进度",
+    "budgetUsed": "已用",
+    "budgetRemaining": "剩余",
+    "budgetTotal": "总计",
+    "consumptionRate": "消耗率",
+    "budgetHealth": "健康度",
+    "healthy": "正常",
+    "overBudget": "超支",
+    "tbd": "待定",
+    "na": "暂无"
+  },
+  "status": {
+    "on_track": "正常推进",
+    "at_risk": "存在风险",
+    "critical": "严重卡点",
+    "not_started": "未启动"
+  },
+  "milestone": {
+    "site_scouting": "寻址",
+    "concept": "概念设计",
+    "schematic_design": "方案设计",
+    "detailed_design": "详图设计",
+    "design_development": "深化设计",
+    "tender": "投标",
+    "construction": "现场施工",
+    "pre_handover": "交付前准备"
+  },
+  "detail": {
+    "timeline": "时间线",
+    "budgetDashboard": "预算仪表盘",
+    "risks": "风险与卡点",
+    "actions": "下一步行动",
+    "completed": "已完成",
+    "inProgress": "进行中",
+    "upcoming": "待开始",
+    "noRisks": "暂无风险",
+    "severity": {
+      "critical": "严重",
+      "warning": "警告",
+      "info": "信息"
+    }
+  },
+  "upload": {
+    "title": "上传门店数据",
+    "dragDrop": "拖拽 JSON 文件到此处，或点击选择文件",
+    "success": "数据更新成功",
+    "error": "JSON 格式无效",
+    "schemaError": "JSON 必须包含带有 'id' 字段的 'stores' 数组"
+  }
+}

@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* Gaggenau Brand Fonts */
+@font-face {
+  font-family: 'Gaggenau Display';
+  src: url('/fonts/GaggenauDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gaggenau Display';
+  src: url('/fonts/GaggenauDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gaggenau Text';
+  src: url('/fonts/GaggenauText-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gaggenau Text';
+  src: url('/fonts/GaggenauText-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gaggenau Display SC';
+  src: url('/fonts/GaggenauDisplaySC-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gaggenau Display SC';
+  src: url('/fonts/GaggenauDisplaySC-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gaggenau Text SC';
+  src: url('/fonts/GaggenauTextSC-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gaggenau Text SC';
+  src: url('/fonts/GaggenauTextSC-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-gold: #C9A96E;
+  --color-gold-dim: rgba(201, 169, 110, 0.15);
+  --color-gold-glow: rgba(201, 169, 110, 0.4);
+  --color-card: rgba(30, 30, 30, 0.75);
+  --color-card-border: rgba(201, 169, 110, 0.15);
+  --color-card-hover: rgba(201, 169, 110, 0.3);
+  --color-bg: #1a1a1a;
+  --color-surface: #222222;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #999999;
+  --color-status-green: #4ade80;
+  --color-status-yellow: #facc15;
+  --color-status-red: #f87171;
+  --color-status-gray: #6b7280;
+  --font-display: 'Gaggenau Display', 'Gaggenau Display SC', 'Playfair Display', serif;
+  --font-body: 'Gaggenau Text', 'Gaggenau Text SC', 'DM Sans', 'Noto Sans SC', 'PingFang SC', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(40, 35, 28, 0.8) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(35, 30, 25, 0.6) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(30, 28, 24, 0.7) 0%, transparent 45%),
+    linear-gradient(135deg, #1a1a1a 0%, #1e1c18 25%, #1a1a1a 50%, #1c1a16 75%, #1a1a1a 100%);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(201, 169, 110, 0.15) 80px, rgba(201, 169, 110, 0.15) 81px),
+    repeating-linear-gradient(-45deg, transparent, transparent 120px, rgba(160, 140, 110, 0.1) 120px, rgba(160, 140, 110, 0.1) 121px);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.3); border-radius: 3px; }
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-red { animation: pulse-red 2s ease-in-out infinite; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.animate-blink { animation: blink 1.5s ease-in-out infinite; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
