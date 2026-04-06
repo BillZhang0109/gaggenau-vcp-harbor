@@ -115,6 +115,13 @@ export default function StoreCard({ store, milestones, index }: StoreCardProps) 
           <div className="text-text-secondary text-[11px] uppercase tracking-wider mb-1.5">{t('store.nextStep')}</div>
           <p className="text-text-primary text-[13px] leading-relaxed">{store.nextStep[lang]}</p>
         </div>
+
+        {store.lastUpdated && (
+          <div className="border-t border-white/5 pt-3 mt-3 flex justify-between">
+            <span className="text-text-secondary/50 text-[10px]">{t('store.lastUpdated')}</span>
+            <span className="text-text-secondary/50 text-[10px] tabular-nums">{store.lastUpdated}</span>
+          </div>
+        )}
       </div>
     </div>
   );

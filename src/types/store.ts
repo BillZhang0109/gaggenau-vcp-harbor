@@ -41,6 +41,7 @@ export interface Store {
   risks: Risk[];
   budgetUsed: number;
   budgetTotal: number | null;
+  lastUpdated?: string;
 }
 
 export interface ProgramData {

@@ -28,7 +28,8 @@
     "healthy": "Healthy",
     "overBudget": "Over Budget",
     "tbd": "TBD",
-    "na": "N/A"
+    "na": "N/A",
+    "lastUpdated": "Updated"
   },
   "status": {
     "on_track": "On Track",

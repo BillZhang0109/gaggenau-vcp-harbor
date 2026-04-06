@@ -4,9 +4,11 @@ import { useStoreData } from './hooks/useStoreData';
 import Navbar from './components/Layout/Navbar';
 import PortfolioOverview from './pages/PortfolioOverview';
 import StoreDetailPage from './pages/StoreDetailPage';
+import PasswordGate, { isAuthenticated } from './components/PasswordGate';
 
 export default function App() {
   const { t, i18n } = useTranslation();
+  const [authed, setAuthed] = useState(isAuthenticated);
   const { data, loading, activeStores } = useStoreData();
   const [activeTab, setActiveTab] = useState('overview');
 
@@ -21,6 +23,10 @@ export default function App() {
     });
     return list;
   }, [activeStores, t, i18n.language]);
+
+  if (!authed) {
+    return <PasswordGate onSuccess={() => setAuthed(true)} />;
+  }
 
   if (loading || !data) {
     return (
@@ -41,7 +47,7 @@ export default function App() {
       />
 
       {/* Main content */}
-      <main className="max-w-[1400px] mx-auto" style={{ padding: '100px 24px 64px' }}>
+      <main className="max-w-[1400px] mx-auto" style={{ padding: '100px 32px 64px' }}>
         {activeTab === 'overview' ? (
           <PortfolioOverview key="overview" data={data} />
         ) : activeStore ? (

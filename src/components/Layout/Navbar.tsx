@@ -21,7 +21,7 @@ export default function Navbar({ tabs, activeTab, onTabChange }: NavbarProps) {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-[rgba(20,20,20,0.85)]"
     >
       {/* Top bar: brand + actions */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-14 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto h-14 flex items-center justify-between" style={{ padding: '0 32px' }}>
         <h1 className="font-display text-gold text-base lg:text-lg tracking-[0.2em] font-semibold">
           {t('brand')}
         </h1>
@@ -37,7 +37,7 @@ export default function Navbar({ tabs, activeTab, onTabChange }: NavbarProps) {
       </div>
 
       {/* Tab bar */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex gap-2 lg:gap-4 overflow-x-auto scrollbar-none">
+      <div className="max-w-[1400px] mx-auto flex gap-2 lg:gap-4 overflow-x-auto scrollbar-none" style={{ padding: '0 32px' }}>
         {tabs.map((tab, i) => (
           <button
             key={tab.key}
@@ -46,7 +46,7 @@ export default function Navbar({ tabs, activeTab, onTabChange }: NavbarProps) {
               activeTab === tab.key
                 ? 'text-gold'
                 : 'text-text-secondary hover:text-text-primary'
-            } ${i > 0 ? 'border-l border-white/5' : ''}`}
+            } ${i === 0 ? 'pl-0' : 'border-l border-white/5'}`}
           >
             {tab.label}
             {activeTab === tab.key && (

@@ -28,7 +28,8 @@
     "healthy": "正常",
     "overBudget": "超支",
     "tbd": "待定",
-    "na": "暂无"
+    "na": "暂无",
+    "lastUpdated": "最近更新"
   },
   "status": {
     "on_track": "正常推进",
