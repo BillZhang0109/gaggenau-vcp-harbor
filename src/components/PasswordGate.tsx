@@ -7,7 +7,7 @@ const ACCESS_KEY = 'gaggenau-harbor-auth';
 // To change password: run in browser console:
 //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR_NEW_PASSWORD'))
 //     .then(b => console.log([...new Uint8Array(b)].map(x => x.toString(16).padStart(2,'0')).join('')))
-const PASSWORD_HASH = 'cf9c24f874b9a4a7ec53904631926d1f739ac83917cf856baabac51d28459c0f'; // default: "gaggenau2026"
+const PASSWORD_HASH = 'cf9c24f874b9a4a7ec53904631926d1f739ac83917cf856baabac51d28459c0f';
 
 async function hashPassword(pw: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));

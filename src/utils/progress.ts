@@ -12,12 +12,14 @@ export function calculateProgress(
   if (store.timelineStart && store.timelineEnd) {
     const start = new Date(store.timelineStart).getTime();
     const end = new Date(store.timelineEnd).getTime();
-    const now = Date.now();
-    const timeProgress = Math.min(
-      Math.max(((now - start) / (end - start)) * 100, 0),
-      100
-    );
-    return Math.round(milestoneProgress * 0.7 + timeProgress * 0.3);
+    if (!isNaN(start) && !isNaN(end) && end > start) {
+      const now = Date.now();
+      const timeProgress = Math.min(
+        Math.max(((now - start) / (end - start)) * 100, 0),
+        100
+      );
+      return Math.round(milestoneProgress * 0.7 + timeProgress * 0.3);
+    }
   }
 
   return Math.round(milestoneProgress);

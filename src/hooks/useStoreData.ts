@@ -18,7 +18,12 @@ export function useStoreData() {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
       })
-      .then((d: ProgramData) => setData(d))
+      .then((d: ProgramData) => {
+        if (!d?.stores || !Array.isArray(d.stores)) {
+          throw new Error('Invalid data: missing stores array');
+        }
+        setData(d);
+      })
       .catch(() => {
         setToast({ type: 'error', message: 'error' });
         setTimeout(() => setToast(null), 3000);

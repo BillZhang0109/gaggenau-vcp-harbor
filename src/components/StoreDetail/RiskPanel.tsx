@@ -27,7 +27,7 @@ export default function RiskPanel({ risks }: { risks: Risk[] }) {
 
         return (
           <div
-            key={i}
+            key={`${severity}-${risk.en.slice(0, 40)}`}
             className={`${cfg.bg} border ${cfg.border} rounded-lg p-3 animate-[fadeIn_0.3s_ease-out_both] ${
               severity === 'critical' ? 'animate-pulse-red' : ''
             }`}
