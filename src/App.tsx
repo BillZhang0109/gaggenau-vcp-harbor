@@ -47,7 +47,7 @@ export default function App() {
       />
 
       {/* Main content */}
-      <main className="max-w-[1400px] mx-auto" style={{ padding: '100px 32px 64px' }}>
+      <main className="max-w-[1400px] mx-auto" style={{ padding: '100px 32px 32px' }}>
         {activeTab === 'overview' ? (
           <PortfolioOverview key="overview" data={data} />
         ) : activeStore ? (
@@ -58,6 +58,21 @@ export default function App() {
           />
         ) : null}
       </main>
+
+      {/* Footer disclaimer */}
+      <footer className="max-w-[1400px] mx-auto text-center" style={{ padding: '0 32px 48px' }}>
+        <div className="border-t border-white/5" style={{ paddingTop: '24px' }}>
+          <p className="text-text-secondary/40 text-[10px] leading-relaxed">
+            {t('footer.disclaimer')}
+          </p>
+          <p className="text-text-secondary/30 text-[10px]" style={{ marginTop: '6px' }}>
+            {t('footer.contact')}{' '}
+            <a href="mailto:Bill.zhang@bshg.com" className="text-gold/50 hover:text-gold transition-colors">
+              Bill.zhang@bshg.com
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

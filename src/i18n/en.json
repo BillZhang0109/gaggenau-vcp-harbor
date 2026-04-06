@@ -62,6 +62,10 @@
       "info": "Info"
     }
   },
+  "footer": {
+    "disclaimer": "This project is for internal communication only. Do not forward to any unauthorized third party.",
+    "contact": "For inquiries, please contact"
+  },
   "upload": {
     "title": "Upload Store Data",
     "dragDrop": "Drag & drop JSON file here, or click to select",
