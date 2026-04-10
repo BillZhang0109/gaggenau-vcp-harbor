@@ -12,7 +12,6 @@ export default function PortfolioOverview({ data, onStoreClick }: PortfolioOverv
   const { t } = useTranslation();
   const onTrack = data.stores.filter(s => s.status === 'on_track').length;
   const notStarted = data.stores.filter(s => s.status === 'not_started').length;
-  const atRisk = data.stores.filter(s => s.status === 'at_risk' || s.status === 'critical').length;
   const totalBudget = data.program.totalBudget;
 
   const kpis = [
