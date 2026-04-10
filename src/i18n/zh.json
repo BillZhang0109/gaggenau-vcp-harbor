@@ -9,7 +9,9 @@
   "overview": {
     "title": "项目组合总览",
     "stores": "门店",
-    "totalBudget": "总预算"
+    "totalBudget": "总预算",
+    "lastUpdated": "最近更新",
+    "programRisks": "总体项目风险"
   },
   "store": {
     "area": "面积",

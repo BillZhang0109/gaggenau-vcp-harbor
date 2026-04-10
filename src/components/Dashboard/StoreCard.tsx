@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef, useState } from 'react';
 import type { Store, MilestoneKey } from '../../types/store';
-import { calculateProgress, formatCurrency } from '../../utils/progress';
+import { calculateProgress, formatDualCurrency } from '../../utils/progress';
 import StatusBadge from './StatusBadge';
 import MilestoneTrack from './MilestoneTrack';
 import CountUp from '../CountUp';
@@ -32,9 +32,9 @@ export default function StoreCard({ store, milestones, index, onClick }: StoreCa
   }, [visible, progress]);
 
   const budgetLabel = store.budgetTotal
-    ? formatCurrency(store.budgetTotal, true)
+    ? formatDualCurrency(store.budgetTotal, true)
     : store.area_sqm && store.unitCost
-    ? `~${formatCurrency(store.area_sqm * store.unitCost, true)}`
+    ? `~${formatDualCurrency(store.area_sqm * store.unitCost, true)}`
     : t('store.tbd');
 
   return (

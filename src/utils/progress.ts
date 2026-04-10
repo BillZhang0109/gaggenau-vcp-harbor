@@ -32,3 +32,19 @@ export function formatCurrency(value: number, short = false): string {
   }
   return `¥${value.toLocaleString()}`;
 }
+
+const EUR_RATE = 8.1;
+
+function formatEur(cny: number, short: boolean): string {
+  const eur = cny / EUR_RATE;
+  if (short) {
+    if (eur >= 1000000) return `€${(eur / 1000000).toFixed(1)}M`;
+    if (eur >= 1000) return `€${(eur / 1000).toFixed(0)}k`;
+    return `€${Math.round(eur).toLocaleString()}`;
+  }
+  return `€${Math.round(eur).toLocaleString()}`;
+}
+
+export function formatDualCurrency(cny: number, short = false): string {
+  return `${formatEur(cny, short)} / ${formatCurrency(cny, short)}`;
+}

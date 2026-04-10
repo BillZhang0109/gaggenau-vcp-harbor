@@ -1,10 +1,18 @@
 {
   "program": {
     "name": "Gaggenau China VCP",
-    "version": "1.8",
-    "lastUpdated": "2026-04-06",
+    "version": "1.9",
+    "lastUpdated": "2026-04-10T16:00",
     "totalBudget": 33600000,
-    "currency": "CNY"
+    "currency": "CNY",
+    "exchangeRate": 8.1,
+    "risks": [
+      {
+        "en": "Internal discussion ongoing: whether FFS stores require local branch company registration in each city. Deadline: end of April 2026.",
+        "zh": "对FFS门店是否需要办理各地分公司正在进行内部讨论，deadline：2026年四月底。",
+        "severity": "warning"
+      }
+    ]
   },
   "stores": [
     {
@@ -22,18 +30,18 @@
       "currentPhase": "site_scouting",
       "completedMilestones": [],
       "currentMilestone": "site_scouting",
-      "nextStep": { "en": "Site scouting in progress, target completion Sep 2026", "zh": "选址进行中，目标2026年9月完成" },
+      "nextStep": { "en": "Confirm focus commercial districts and rental budget range for each city", "zh": "内部确认三个城市的重点商圈位置和租金预算范围" },
       "estimatedCompletion": "2027-07-30",
       "risks": [],
       "phaseDetails": {
         "site_scouting": {
-          "description": { "en": "Internal discussion on target district; shortlisting prime commercial zones for evaluation", "zh": "内部讨论店址区域，提出大致商业区位置供选择" },
-          "updatedAt": "2026-04-06"
+          "description": { "en": "Preliminary site research in progress, led by Procurement department", "zh": "选址阶段前期调研中，由采购部负责" },
+          "updatedAt": "2026-04-10"
         }
       },
       "budgetUsed": 0,
       "budgetTotal": null,
-      "lastUpdated": "2026-04-06"
+      "lastUpdated": "2026-04-10"
     },
     {
       "id": "HZ-FFS",
@@ -44,24 +52,24 @@
       "budget": null,
       "unitCost": 16000,
       "designPartner": "1zu33 (DE)",
-      "status": "not_started",
+      "status": "on_track",
       "timelineStart": "2026-04-01",
       "timelineEnd": "2027-07-30",
       "currentPhase": "site_scouting",
       "completedMilestones": [],
       "currentMilestone": "site_scouting",
-      "nextStep": { "en": "Site search coordination", "zh": "协调选址" },
+      "nextStep": { "en": "Confirm focus commercial districts and rental budget range for each city", "zh": "内部确认三个城市的重点商圈位置和租金预算范围" },
       "estimatedCompletion": "2027-07-30",
       "risks": [],
       "phaseDetails": {
         "site_scouting": {
-          "description": { "en": "Coordinating with local retail partners on potential locations", "zh": "与本地零售合作伙伴协调潜在选址" },
-          "updatedAt": "2026-04-06"
+          "description": { "en": "Preliminary site research in progress, led by Procurement department", "zh": "选址阶段前期调研中，由采购部负责" },
+          "updatedAt": "2026-04-10"
         }
       },
       "budgetUsed": 0,
       "budgetTotal": null,
-      "lastUpdated": "2026-04-06"
+      "lastUpdated": "2026-04-10"
     },
     {
       "id": "GZ-FFS",
@@ -72,13 +80,13 @@
       "budget": null,
       "unitCost": 16000,
       "designPartner": "1zu33 (DE)",
-      "status": "not_started",
+      "status": "on_track",
       "timelineStart": "2026-04-01",
       "timelineEnd": "2027-07-30",
       "currentPhase": "site_scouting",
       "completedMilestones": [],
       "currentMilestone": "site_scouting",
-      "nextStep": { "en": "Start site search", "zh": "启动选址" },
+      "nextStep": { "en": "Confirm focus commercial districts and rental budget range for each city", "zh": "内部确认三个城市的重点商圈位置和租金预算范围" },
       "estimatedCompletion": "2027-07-30",
       "risks": [
         { "en": "Existing store closes March 2027, temporary sales gap accepted", "zh": "现有门店2027年3月关闭，已接受短暂销售停滞", "severity": "warning" },
@@ -86,13 +94,13 @@
       ],
       "phaseDetails": {
         "site_scouting": {
-          "description": { "en": "Pending initiation; awaiting internal alignment on target area", "zh": "待启动，等待内部确认目标商圈" },
-          "updatedAt": "2026-04-06"
+          "description": { "en": "Preliminary site research in progress, led by Procurement department", "zh": "选址阶段前期调研中，由采购部负责" },
+          "updatedAt": "2026-04-10"
         }
       },
       "budgetUsed": 0,
       "budgetTotal": null,
-      "lastUpdated": "2026-04-06"
+      "lastUpdated": "2026-04-10"
     },
     {
       "id": "NB-BFS",
@@ -144,7 +152,7 @@
       "currentPhase": "site_scouting",
       "completedMilestones": [],
       "currentMilestone": "site_scouting",
-      "nextStep": { "en": "Start site search", "zh": "启动选址" },
+      "nextStep": { "en": "City not yet confirmed; project not started", "zh": "城市尚未确认，项目尚未启动" },
       "estimatedCompletion": null,
       "risks": [
         { "en": "Existing store (Taikoo Li) closes March 2027, temporary sales gap accepted", "zh": "现有门店（太古里）2027年3月关闭，已接受短暂销售停滞", "severity": "warning" },
@@ -175,7 +183,7 @@
       "currentPhase": "site_scouting",
       "completedMilestones": [],
       "currentMilestone": "site_scouting",
-      "nextStep": { "en": "Site search coordination", "zh": "协调选址" },
+      "nextStep": { "en": "City not yet confirmed; project not started", "zh": "城市尚未确认，项目尚未启动" },
       "estimatedCompletion": null,
       "phaseDetails": {
         "site_scouting": {
@@ -203,7 +211,7 @@
       "currentPhase": "site_scouting",
       "completedMilestones": [],
       "currentMilestone": "site_scouting",
-      "nextStep": { "en": "Site search coordination", "zh": "协调选址" },
+      "nextStep": { "en": "City not yet confirmed; project not started", "zh": "城市尚未确认，项目尚未启动" },
       "estimatedCompletion": null,
       "phaseDetails": {
         "site_scouting": {

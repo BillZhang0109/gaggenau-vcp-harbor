@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef } from 'react';
-import { formatCurrency } from '../../utils/progress';
+import { formatDualCurrency } from '../../utils/progress';
 import CountUp from '../CountUp';
 
 interface BudgetGaugeProps {
@@ -62,15 +62,15 @@ export default function BudgetGauge({ used, total }: BudgetGaugeProps) {
       <div className="w-full max-w-xs space-y-2 text-sm">
         <div className="flex justify-between">
           <span className="text-text-secondary">{t('store.budgetUsed')}</span>
-          <span className="text-gold font-medium tabular-nums">{formatCurrency(used, true)}</span>
+          <span className="text-gold font-medium tabular-nums">{formatDualCurrency(used, true)}</span>
         </div>
         <div className="flex justify-between">
           <span className="text-text-secondary">{t('store.budgetRemaining')}</span>
-          <span className="text-text-primary tabular-nums">{formatCurrency(remaining, true)}</span>
+          <span className="text-text-primary tabular-nums">{formatDualCurrency(remaining, true)}</span>
         </div>
         <div className="flex justify-between">
           <span className="text-text-secondary">{t('store.budgetTotal')}</span>
-          <span className="text-text-primary tabular-nums">{formatCurrency(total, true)}</span>
+          <span className="text-text-primary tabular-nums">{formatDualCurrency(total, true)}</span>
         </div>
         <div className="flex justify-between pt-2 border-t border-card-border">
           <span className="text-text-secondary">{t('store.budgetHealth')}</span>

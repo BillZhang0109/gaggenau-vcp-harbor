@@ -57,6 +57,8 @@ export interface ProgramData {
     lastUpdated: string;
     totalBudget: number;
     currency: string;
+    exchangeRate?: number;
+    risks?: Risk[];
   };
   stores: Store[];
   milestoneDefinition: MilestoneKey[];

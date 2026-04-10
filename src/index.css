@@ -75,8 +75,8 @@
   --color-status-yellow: #facc15;
   --color-status-red: #f87171;
   --color-status-gray: #6b7280;
-  --font-display: 'Gaggenau Display', 'Gaggenau Display SC', 'Playfair Display', serif;
-  --font-body: 'Gaggenau Text', 'Gaggenau Text SC', 'Inter', 'DM Sans', 'Noto Sans SC', 'PingFang SC', sans-serif;
+  --font-display: 'Gaggenau Display', 'Gaggenau Display SC', 'Playfair Display', 'STXihei', '华文细黑', serif;
+  --font-body: 'Gaggenau Text', 'Gaggenau Text SC', 'Inter', 'DM Sans', 'STXihei', '华文细黑', 'Noto Sans SC', 'PingFang SC', sans-serif;
 }
 
 * {

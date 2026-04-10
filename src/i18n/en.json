@@ -9,7 +9,9 @@
   "overview": {
     "title": "Portfolio Overview",
     "stores": "Stores",
-    "totalBudget": "Total Budget"
+    "totalBudget": "Total Budget",
+    "lastUpdated": "Last Updated",
+    "programRisks": "Program-Level Risks"
   },
   "store": {
     "area": "Area",
