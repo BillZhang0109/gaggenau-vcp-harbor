@@ -41,25 +41,30 @@ export default function StoreCard({ store, milestones, index, onClick }: StoreCa
     <div
       onClick={onClick}
       role={onClick ? 'button' : undefined}
-      className="group bg-card backdrop-blur-xl border border-card-border rounded-lg hover:border-card-hover hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,169,110,0.08)] transition-all duration-300 flex flex-col cursor-pointer"
+      className="glass-card group flex flex-col cursor-pointer hover:-translate-y-1"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(16px)',
-        transition: 'opacity 0.4s ease-out, transform 0.4s ease-out',
+        transition: 'opacity 0.4s ease-out, transform 0.4s ease-out, background 0.4s, border-color 0.4s, box-shadow 0.4s',
         padding: '28px 28px 24px',
       }}
     >
       {/* Header: City + Type + Status */}
-      <div className="flex items-center justify-between mb-5">
+      <div className="flex items-center justify-between" style={{ marginBottom: '20px' }}>
         <div className="flex items-center gap-3">
           <h3 className="font-display text-gold text-lg lg:text-xl font-bold leading-snug">
             {store.name[lang]}
           </h3>
-          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-sm ${
-            store.type === 'FFS'
-              ? 'bg-gold/15 text-gold border border-gold/25'
-              : 'bg-white/5 text-text-secondary border border-white/10'
-          }`}>
+          <span
+            className="text-[10px] font-bold"
+            style={{
+              padding: '2px 10px',
+              borderRadius: '20px',
+              background: store.type === 'FFS' ? 'rgba(201,169,110,0.12)' : 'rgba(255,255,255,0.04)',
+              color: store.type === 'FFS' ? '#C9A96E' : 'rgba(255,255,255,0.4)',
+              border: `1px solid ${store.type === 'FFS' ? 'rgba(201,169,110,0.2)' : 'rgba(255,255,255,0.08)'}`,
+            }}
+          >
             {store.type}
           </span>
         </div>
@@ -67,23 +72,22 @@ export default function StoreCard({ store, milestones, index, onClick }: StoreCa
       </div>
 
       {/* Progress bar */}
-      <div className="mb-6">
-        <div className="flex items-baseline justify-between mb-2">
-          <span className="text-text-secondary text-[11px] uppercase tracking-wider">{t('store.progress')}</span>
+      <div style={{ marginBottom: '20px' }}>
+        <div className="flex items-baseline justify-between" style={{ marginBottom: '8px' }}>
+          <span className="text-[11px] uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.3)' }}>{t('store.progress')}</span>
           <span className="text-gold text-base font-bold tabular-nums">
             <CountUp end={progress} />
-            <span className="text-gold/50 text-sm ml-0.5">%</span>
+            <span style={{ color: 'rgba(201,169,110,0.4)', fontSize: '14px', marginLeft: '2px' }}>%</span>
           </span>
         </div>
-        <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <div style={{ height: '3px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', overflow: 'hidden' }}>
           <div
             ref={barRef}
-            className="h-full bg-gradient-to-r from-gold/70 to-gold rounded-full"
-            style={{ width: 0, transition: 'width 0.8s ease-in-out' }}
+            style={{ height: '100%', width: 0, background: 'linear-gradient(90deg, rgba(201,169,110,0.4), #C9A96E)', borderRadius: '4px', transition: 'width 0.8s ease-in-out' }}
           />
         </div>
         {store.timelineStart && store.timelineEnd && (
-          <div className="flex justify-between text-[10px] text-text-secondary/50 mt-2 tabular-nums">
+          <div className="flex justify-between tabular-nums" style={{ marginTop: '6px', fontSize: '10px', color: 'rgba(255,255,255,0.2)' }}>
             <span>{store.timelineStart}</span>
             <span>{store.timelineEnd}</span>
           </div>
@@ -91,7 +95,7 @@ export default function StoreCard({ store, milestones, index, onClick }: StoreCa
       </div>
 
       {/* Milestones */}
-      <div className="mb-6">
+      <div style={{ marginBottom: '20px' }}>
         <MilestoneTrack
           milestones={milestones}
           completed={store.completedMilestones}
@@ -100,29 +104,29 @@ export default function StoreCard({ store, milestones, index, onClick }: StoreCa
       </div>
 
       {/* Key info grid */}
-      <div className="space-y-3 text-[13px]">
-        <div className="flex justify-between">
-          <span className="text-text-secondary">{t('store.currentPhase')}</span>
+      <div className="text-[13px]">
+        <div className="flex justify-between" style={{ padding: '7px 0', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+          <span style={{ color: 'rgba(255,255,255,0.35)' }}>{t('store.currentPhase')}</span>
           <span className="text-gold font-medium">{t(`milestone.${store.currentPhase}`)}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-text-secondary">{t('store.designer')}</span>
-          <span className="text-text-primary font-medium">{store.designPartner}</span>
+        <div className="flex justify-between" style={{ padding: '7px 0', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+          <span style={{ color: 'rgba(255,255,255,0.35)' }}>{t('store.designer')}</span>
+          <span style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{store.designPartner}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-text-secondary">{t('store.budget')}</span>
-          <span className="text-text-primary font-medium tabular-nums">{budgetLabel}</span>
+        <div className="flex justify-between" style={{ padding: '7px 0' }}>
+          <span style={{ color: 'rgba(255,255,255,0.35)' }}>{t('store.budget')}</span>
+          <span className="tabular-nums" style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{budgetLabel}</span>
         </div>
 
-        <div className="border-t border-white/5 pt-3 mt-3">
-          <div className="text-text-secondary text-[11px] uppercase tracking-wider mb-1.5">{t('store.nextStep')}</div>
-          <p className="text-text-primary text-[13px] leading-relaxed">{store.nextStep[lang]}</p>
+        <div style={{ marginTop: '14px', padding: '12px 16px', background: 'rgba(201,169,110,0.04)', border: '1px solid rgba(201,169,110,0.08)', borderRadius: '12px' }}>
+          <div className="uppercase tracking-wider" style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', marginBottom: '6px' }}>{t('store.nextStep')}</div>
+          <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>{store.nextStep[lang]}</p>
         </div>
 
         {store.lastUpdated && (
-          <div className="border-t border-white/5 pt-3 mt-3 flex justify-between">
-            <span className="text-text-secondary/50 text-[10px]">{t('store.lastUpdated')}</span>
-            <span className="text-text-secondary/50 text-[10px] tabular-nums">{store.lastUpdated}</span>
+          <div className="flex justify-between" style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px solid rgba(255,255,255,0.04)', fontSize: '10px', color: 'rgba(255,255,255,0.2)' }}>
+            <span>{t('store.lastUpdated')}</span>
+            <span className="tabular-nums">{store.lastUpdated}</span>
           </div>
         )}
       </div>

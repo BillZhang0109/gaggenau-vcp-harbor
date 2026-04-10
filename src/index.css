@@ -62,11 +62,13 @@
   --color-gold: #C9A96E;
   --color-gold-dim: rgba(201, 169, 110, 0.15);
   --color-gold-glow: rgba(201, 169, 110, 0.4);
-  --color-card: rgba(30, 30, 30, 0.75);
-  --color-card-border: rgba(201, 169, 110, 0.15);
-  --color-card-hover: rgba(201, 169, 110, 0.3);
-  --color-bg: #1a1a1a;
-  --color-surface: #222222;
+  --color-accent-blue: #7DD3FC;
+  --color-card: rgba(255, 255, 255, 0.04);
+  --color-card-solid: rgba(20, 24, 32, 0.85);
+  --color-card-border: rgba(255, 255, 255, 0.06);
+  --color-card-hover: rgba(255, 255, 255, 0.08);
+  --color-bg: #0C0F14;
+  --color-surface: #141820;
   --color-text-primary: #ffffff;
   --color-text-secondary: #999999;
   --color-status-green: #4ade80;
@@ -74,7 +76,7 @@
   --color-status-red: #f87171;
   --color-status-gray: #6b7280;
   --font-display: 'Gaggenau Display', 'Gaggenau Display SC', 'Playfair Display', serif;
-  --font-body: 'Gaggenau Text', 'Gaggenau Text SC', 'DM Sans', 'Noto Sans SC', 'PingFang SC', sans-serif;
+  --font-body: 'Gaggenau Text', 'Gaggenau Text SC', 'Inter', 'DM Sans', 'Noto Sans SC', 'PingFang SC', sans-serif;
 }
 
 * {
@@ -91,37 +93,97 @@ body {
   overflow-x: hidden;
 }
 
+/* Ambient orbs - Liquid Glass background */
 body::before {
   content: '';
   position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(40, 35, 28, 0.8) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(35, 30, 25, 0.6) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 80%, rgba(30, 28, 24, 0.7) 0%, transparent 45%),
-    linear-gradient(135deg, #1a1a1a 0%, #1e1c18 25%, #1a1a1a 50%, #1c1a16 75%, #1a1a1a 100%);
+  top: -15%;
+  left: -8%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: orb-float-1 22s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
 }
 
 body::after {
   content: '';
   position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.03;
-  background-image:
-    repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(201, 169, 110, 0.15) 80px, rgba(201, 169, 110, 0.15) 81px),
-    repeating-linear-gradient(-45deg, transparent, transparent 120px, rgba(160, 140, 110, 0.1) 120px, rgba(160, 140, 110, 0.1) 121px);
+  bottom: -10%;
+  right: -5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: orb-float-2 28s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 30px) scale(1.05); }
+  66% { transform: translate(-20px, 50px) scale(0.95); }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, -20px) scale(1.08); }
+  66% { transform: translate(30px, -40px) scale(0.92); }
 }
 
 #root {
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.3); border-radius: 3px; }
+/* Glass card base */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(201, 169, 110, 0.15);
+  box-shadow: 0 16px 48px rgba(201, 169, 110, 0.06);
+}
+
+/* Refraction border overlay */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 110, 0.2),
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(125, 211, 252, 0.08) 60%,
+    rgba(201, 169, 110, 0.15)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.2); border-radius: 3px; }
+
+/* Animations */
 @keyframes pulse-red {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -137,4 +199,18 @@ body::after {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Status dot glow */
+.status-glow-green {
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+.status-glow-yellow {
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+.status-glow-red {
+  box-shadow: 0 0 8px rgba(248, 113, 113, 0.5);
+}
+.status-glow-gray {
+  box-shadow: 0 0 6px rgba(107, 114, 128, 0.4);
 }

@@ -83,8 +83,8 @@ export default function PasswordGate({ onSuccess }: { onSuccess: () => void }) {
         {/* Gate card */}
         <form
           onSubmit={handleSubmit}
-          className="bg-card backdrop-blur-xl border border-card-border rounded-lg p-8 text-center"
-          style={{ display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center' }}
+          className="glass-card text-center"
+          style={{ display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', padding: '32px' }}
         >
           <label className="text-text-secondary text-[11px] uppercase tracking-wider">
             {t.accessCode}

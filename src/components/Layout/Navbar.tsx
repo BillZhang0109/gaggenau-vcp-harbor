@@ -18,7 +18,8 @@ export default function Navbar({ tabs, activeTab, onTabChange }: NavbarProps) {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-[rgba(20,20,20,0.85)]"
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{ background: 'rgba(12, 15, 20, 0.8)', backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(30px)' }}
     >
       {/* Top bar: brand + actions */}
       <div className="max-w-[1400px] mx-auto h-14 flex items-center justify-between" style={{ padding: '0 32px' }}>
@@ -29,7 +30,12 @@ export default function Navbar({ tabs, activeTab, onTabChange }: NavbarProps) {
         <div className="flex items-center gap-3">
           <button
             onClick={toggleLang}
-            className="w-8 h-8 flex items-center justify-center text-xs font-semibold border border-gold/20 rounded-full text-text-secondary hover:text-gold hover:border-gold/50 transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-xs font-semibold rounded-full transition-all"
+            style={{
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(201,169,110,0.2)',
+              color: 'rgba(255,255,255,0.5)',
+            }}
           >
             {i18n.language === 'en' ? '中' : 'EN'}
           </button>
@@ -42,22 +48,23 @@ export default function Navbar({ tabs, activeTab, onTabChange }: NavbarProps) {
           <button
             key={tab.key}
             onClick={() => onTabChange(tab.key)}
-            className={`relative px-5 py-2.5 text-[13px] font-medium whitespace-nowrap transition-colors ${
+            className={`relative py-2.5 text-[13px] font-medium whitespace-nowrap transition-colors ${
               activeTab === tab.key
                 ? 'text-gold'
                 : 'text-text-secondary hover:text-text-primary'
-            } ${i === 0 ? 'pl-0' : 'border-l border-white/5'}`}
+            }`}
+            style={{ padding: i === 0 ? '10px 20px 10px 0' : '10px 20px' }}
           >
             {tab.label}
             {activeTab === tab.key && (
-              <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold rounded-full" style={{ opacity: 0.7 }} />
             )}
           </button>
         ))}
       </div>
 
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      {/* Divider - gradient line */}
+      <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(201,169,110,0.2) 20%, rgba(125,211,252,0.08) 80%, transparent)' }} />
     </nav>
   );
 }
